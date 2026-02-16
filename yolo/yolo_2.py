@@ -29,7 +29,7 @@ while videoCap.isOpened() :
     if not ret : 
         break # break the loop if no frame is read
     
-    print(frame)
+    # print(frame)
     # break
     
     # press q to quit
