@@ -10,90 +10,10 @@ cap = cv2.VideoCapture(1)
 cap.set(3, 1280)
 cap.set(4, 720)
 
-model = YOLO('yolo/yolov8n.pt')
+# model = YOLO('yolo/yolov8n.pt')
+model = YOLO('model/20861.pt')
 
 win_name = "OpenCV with Yolo"
-
-# classNames = ["person",
-# "bicycle",
-# "car",
-# "motorbike",
-# "aeroplane",
-# "bus",
-# "train",
-# "truck",
-# "boat",
-# "traffic light",
-# "fire hydrant",
-# "stop sign",
-# "parking meter",
-# "bench",
-# "bird",
-# "cat",
-# "dog",
-# "horse",
-# "sheep",
-# "cow",
-# "elephant",
-# "bear",
-# "zebra",
-# "giraffe",
-# "backpack",
-# "umbrella",
-# "handbag",
-# "tie",
-# "suitcase",
-# "frisbee",
-# "skis",
-# "snowboard",
-# "sports ball",
-# "kite",
-# "baseball bat",
-# "baseball glove",
-# "skateboard",
-# "surfboard",
-# "tennis racket",
-# "bottle",
-# "wine glass",
-# "cup",
-# "fork",
-# "knife",
-# "spoon",
-# "bowl",
-# "banana",
-# "apple",
-# "sandwich",
-# "orange",
-# "broccoli",
-# "carrot",
-# "hot dog",
-# "pizza",
-# "donut",
-# "cake",
-# "chair",
-# "sofa",
-# "pottedplant",
-# "bed",
-# "diningtable",
-# "toilet",
-# "tvmonitor",
-# "laptop",
-# "mouse",
-# "remote",
-# "keyboard",
-# "cell phone",
-# "microwave",
-# "oven",
-# "toaster",
-# "sink",
-# "refrigerator",
-# "book",
-# "clock",
-# "vase",
-# "scissors",
-# "teddy bear",
-# "hair drier",
-# "toothbrush"]
 
 while cv2.waitKey(1) != 27 : # Escape :
     success, img = cap.read()
@@ -102,12 +22,13 @@ while cv2.waitKey(1) != 27 : # Escape :
     for r in result :
         
         class_names = r.names
-        print(class_names)    
+        # print(class_names)    
         # break
         
         boxes = r.boxes
         # print(boxes)
         for box in boxes :
+            print("boxes")
             x1, y1, x2, y2 = box.xyxy[0]
             x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
             w, h = x2-x1, y2-y1
