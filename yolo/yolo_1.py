@@ -6,12 +6,12 @@ from ultralytics import YOLO
 import cvzone
 import math
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720)
 
-# model = YOLO('yolo/yolov8n.pt')
-model = YOLO('model/20861.pt')
+model = YOLO('yolo/yolov8n.pt')
+# model = YOLO('model/20861.pt')
 
 win_name = "OpenCV with Yolo"
 

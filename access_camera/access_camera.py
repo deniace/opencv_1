@@ -3,7 +3,7 @@ import sys
 
 # 0 = Default kamera
 # 1 = kamera 1
-s = 1
+s = 0
 print(len(sys.argv))
 
 if len(sys.argv) > 1 :
